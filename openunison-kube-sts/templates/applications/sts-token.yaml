@@ -181,9 +181,9 @@ spec:
 
 
             {{ if $sts.host_in_openunison  }}
-            if (request.getRequestURI() == "{{ $sts.issuer.path | default "/" }}.well-known/openid-configuration") {
+            if (request.getRequestURI() == "{{ $localpath }}/.well-known/openid-configuration") {
               response.getWriter().println(gson.toJson(oidcDiscovery));  
-            } else if (request.getRequestURI() == "{{ $sts.issuer.path | default "/" }}certs") {
+            } else if (request.getRequestURI() == "{{ $localpath }}/certs") {
               response.getWriter().println(new JsonWebKeySet(jwk).toJson());  
             }
             {{ else }}
