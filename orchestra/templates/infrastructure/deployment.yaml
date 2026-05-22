@@ -116,7 +116,11 @@ spec:
             - "alive"
             {{ end }}
           failureThreshold: 10
+          {{ if .Values.openunison.enable_provisioning }}
           initialDelaySeconds: 30
+          {{ else }}
+          initialDelaySeconds: 5
+          {{ end }}
           periodSeconds: 10
           successThreshold: 1
           timeoutSeconds: 10
@@ -143,7 +147,11 @@ spec:
             - "alive"
             {{ end }}
           failureThreshold: 3
+          {{ if .Values.openunison.enable_provisioning }}
           initialDelaySeconds: 15
+          {{ else }}
+          initialDelaySeconds: 5
+          {{ end }}
           periodSeconds: 10
           successThreshold: 1
           timeoutSeconds: 10

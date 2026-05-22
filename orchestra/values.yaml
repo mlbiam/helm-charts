@@ -44,7 +44,7 @@ headlamp:
   enabled: true
   service_name: headlamp
   cert_name: headlamp-tls
-  image: ghcr.io/headlamp-k8s/headlamp:v0.41.0
+  image: ghcr.io/headlamp-k8s/headlamp:v0.42.0
   config:
     enableHelm: true
   pluginConfig:
@@ -119,6 +119,7 @@ network_policies:
   namespace_label: kubernetes.io/metadata.name
 
 services:
+  helm_webhook: false
   enable_tokenrequest: false
   token_request_audience: api
   token_request_expiration_seconds: 600
@@ -253,3 +254,8 @@ openunison:
         cluster_admin_group: "CN=k8s_login_ckuster_admins,CN=Users,DC=ent2k12,DC=domain,DC=com"
         approversGroup: approvers
       
+sts:
+  endpoints: []
+
+admission_controllers: []
+
