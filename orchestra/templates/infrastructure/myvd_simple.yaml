@@ -1,3 +1,4 @@
+{{ if eq .Values.openunison.enable_portal true }}
 {{ if or .Values.oidc .Values.github .Values.saml }}
 {{ if eq .Values.openunison.enable_provisioning false }}
 ---
@@ -45,5 +46,6 @@ data:
     server.shadowUsers.api.config.nameSpace={{ .Release.Namespace }}
     server.shadowUsers.api.config.k8sTargetName=k8s
     server.shadowUsers.api.config.alwaysMapUIDInFilter=true
+{{ end }}
 {{ end }}
 {{ end }}
