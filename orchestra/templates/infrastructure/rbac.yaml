@@ -313,10 +313,10 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "20"
 rules:
-- apiGroups: ["v1"]
+- apiGroups: [""]
   resources: ["pods"]
   verbs: ["get"]
-- apiGroups: ["apps/v1"]
+- apiGroups: ["apps"]
   resources: ["replicasets","deployments"]
   verbs: ["get"]
 - apiGroups: ["openunison.tremolo.io"]
