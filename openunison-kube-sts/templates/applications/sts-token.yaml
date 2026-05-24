@@ -237,7 +237,7 @@ spec:
         - saname
         {{ if $sts.additionalAttributes }}
         {{ range $attribute := $sts.additionalAttributes }}
-        - $attribute.target
+        - {{ $attribute.target }}
         {{ end }}
         {{ end }}
         audience: {{ $sts.audience }}
